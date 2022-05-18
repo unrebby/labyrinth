@@ -467,7 +467,6 @@ public:
         int_to_coordinate[43] = {4, -2};
 
 
-        // Каждой точке сопоставил координату
 
 
         n = int_to_char.size();
@@ -703,11 +702,6 @@ public:
     void conduct_series_of_experiments_memorizing_routes(size_t number_of_experiments, Rat& roger) {
         vector_of_generated_routes.clear();
         flag_has_to_stop = false;
-        // СЕЙЧАС РАБОТАЕТ ТОЛЬКО ОПЕРАТОР РАНДОМА И ОПЕРАТОР ИНВЕРСИИ
-        // Написаны операторы: general, random, inversion
-        // general discrete operator - вспомогательная вещь, в явном виде грызун не применяет дискретный оператор.
-        // Оператор общего вида нужен чисто для упрощения программирования
-
         long long counter_of_wrong_routes = 0;
         for (size_t i = 0; i < number_of_experiments; ++i) {
             conduct_experiment(roger);
@@ -1200,10 +1194,6 @@ int main() {
 
     roger.set_probabilities_of_relative_dirs(54 / delimiter, 20 / delimiter, 20 / delimiter, 6 / delimiter);
 
-    //vector<double> pr = {0.0, 0.9, 0.05, 0.01, 0.04};
-    //roger.set_probabilities_of_relative_dirs(54 / delimiter, 20 / delimiter, 20 / delimiter, 6 / delimiter);
-    //maze.set_probabilities_for_operators({0.0, 60 / delimiter, 10 / delimiter, 20 / delimiter, 10 / delimiter});
-    //maze.conduct_series_of_experiments_memorizing_routes(3, roger);
     int min = 1000000;
 
     vector<string> all_routes;
